@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "WebEmp"
+    }
+  },
+  "defaultProject": "WebEmp",
+  "cli": {
+    "analytics": "c2868268-6653-4bfc-aef4-433e749e3f75"
+  }
 }

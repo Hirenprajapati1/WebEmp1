@@ -1,4 +1,4 @@
-import { EmployeeWithId } from './employee';
+import { EmployeeWithId, DepartmentData, DesignationData } from './employee';
 import { environment } from './../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -29,14 +29,42 @@ export class CrudService {
     return this.http.delete(environment.EmpUrl + '/api/EmployeeMain/DeleteEmployee/'+id);
   }
 
+
   GetDepartment(){
    return this.http.get(environment.EmpUrl + '/api/EmployeeMain/GetDepartment');
   }
 
+  AddDepartment(dept){
+    return this.http.post(environment.EmpUrl + '/api/EmployeeMain/AddDepartment',dept,{responseType:'text' as 'json'});
+   }
+ 
+   UpdateDepartment(dep: DepartmentData){
+    return this.http.post(environment.EmpUrl + '/api/EmployeeMain/EditDepartment',dep,{responseType:'text' as 'json'});
+  }
+ 
+   DeleteDepartment(id){
+    return this.http.delete(environment.EmpUrl + '/api/EmployeeMain/DeleteDepartment/'+id);
+   }
+ 
+   
+
   GetDesignation(){
    return this.http.get(environment.EmpUrl + '/api/EmployeeMain/GetDesignation');
   }
+
   
+  AddDesignation(des){
+    return this.http.post(environment.EmpUrl + '/api/EmployeeMain/AddDesignation',des,{responseType:'text' as 'json'});
+   }
+ 
+   UpdateDesignation(des: DesignationData){
+    return this.http.post(environment.EmpUrl + '/api/EmployeeMain/EditDesignation',des,{responseType:'text' as 'json'});
+  }
+ 
+   DeleteDesignation(id){
+    return this.http.delete(environment.EmpUrl + '/api/EmployeeMain/DeleteDesignation/'+id);
+   }
+
   // refreshList(){
   //   this.http.get(environment.EmpUrl + '/api/EmployeeMain/GetEmployees')
   //   .toPromise()

@@ -28,8 +28,8 @@ export class EmployeeWithId{
 
 export class DepartmentData{
     constructor(
-        public departmentID:number
-        // public departmentName:string
+        public departmentId:number,
+        public departmentName:string
     ){}
 }
 

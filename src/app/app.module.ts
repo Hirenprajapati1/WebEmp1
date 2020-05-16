@@ -10,13 +10,19 @@ import { GetEmployeeComponent } from './Component/get-employee/get-employee.comp
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UpdateEmployeeComponent } from './Component/update-employee/update-employee.component';
+import { DesignationViewComponent } from './Component/designation-view/designation-view.component';
+import { DepartmentViewComponent } from './Component/department-view/department-view.component';
+import { HomePageComponent } from './Component/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetEmployeeComponent,
     AddEmployeeComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    DesignationViewComponent,
+    DepartmentViewComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

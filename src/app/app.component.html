@@ -1,8 +1,30 @@
-<!-- <app-add-employee></app-add-employee> -->
-<!-- <app-get-employee></app-get-employee>
-<app-update-employee></app-update-employee> -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+    
+    <div class="row" style="background-color: blueviolet;">
+        <div class="col-md-4">
+            <input class="block"routerLink="/GetEmployeePath"type="button" value="Manage Employee">
+        </div>
+
+        <div class="col-md-4">
+            <input class="block"routerLink="/DepartmentViewPath"type="button" value="Manage Department">
+        </div>
+
+        <div class="col-md-4">
+            <input class="block"routerLink="/DesignationViewPath"type="button" value="Manage Designation">
+        </div>
+
+    </div>
+</div>
 
 <router-outlet></router-outlet>
+
+<!-- <app-add-employee></app-add-employee> -->
+<!-- <app-get-employee></app-get-employee> -->
+<!-- <app-update-employee></app-update-employee>  -->
 <!-- <app-department-view></app-department-view>
 <app-designation-view></app-designation-view> -->
 <!-- <app-home-page></app-home-page> -->

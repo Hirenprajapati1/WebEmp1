@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <form>
            <h1 style="text-align: center">Add Designation</h1>
                     <div class="form-group">
@@ -24,9 +24,12 @@
                 <h1>Designation is Added Successfully</h1>
             </div>
         </div>
-     
+      -->
         <!-- Display Data -->
-        <div class="col-md-4">
+        <!-- <div class="col-md-4"> -->
+            <div style="margin-top: 10px;">     
+                <input class="block"routerLink="/DesignationAddPath"type="button" value="Add New Designation">
+            </div>
 
             <h2 style="text-align: center">Designation Data</h2>
             <table class="table table-bordered">
@@ -43,7 +46,7 @@
                 <tr *ngFor="let deg of DegData" class="div1">        
                       <td style="text-align: center" class="div3">{{deg.designationId}}</td>    
                       <td style="text-align: center">{{deg.designationName}}</td>    
-                      <td style="text-align: center"><button type="button"routerLink="/UpdateEmployeePath" class="button">Update</button></td>
+                      <td style="text-align: center"><button type="button"routerLink="/DesignationUpdatePath" class="button">Update</button></td>
                       <td class="text-center">
                           <button class="btn btn-danger btn-xs" (click)="DeleteDesignationNow(deg.designationId)">
                               <span class="glyphicon glyphicon-remove">Delete</span> 
@@ -52,9 +55,9 @@
                   </tr>
               </tbody>
             </table>
-        </div>
+        <!-- </div> -->
 
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <form>
            <h1 style="text-align: center">Update Designation </h1>
                     <div class="form-group">
@@ -81,7 +84,7 @@
                 <h1>Department is Updated Successfully</h1>
             </div>
         </div>
-     
+      -->
 
     </div>
 </div>

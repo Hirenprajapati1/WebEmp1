@@ -28,3 +28,15 @@
     border: none;
     background: #9fbb3c;
 }
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #4CAF50;
+    padding: 5px 28px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+  }
+  

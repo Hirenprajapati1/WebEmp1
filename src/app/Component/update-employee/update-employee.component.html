@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <!-- <div class="col-md-6"> -->
             
             <form>
                 <fieldset>
@@ -88,14 +88,15 @@
                                    
 
                     <div class="form-group">
-                        <input class="btn btn-success"routerLink="/GetEmployeePath" type="submit" name="submit_reg" value="submit" (click)="GetforUpdate()">
-                        <input class="btn btn-succes" routerLink="/GetEmployeePath" type="button" name="Cancel" value="Cancel">
+                        <input class="btn btn-success block"routerLink="/GetEmployeePath" type="submit" name="submit_reg" value="submit" (click)="GetforUpdate()">
+                        <input style="margin-top: 10px;" class="btn btn-succes block" routerLink="/GetEmployeePath" type="button" name="Cancel" value="Cancel">
                         <router-outlet></router-outlet>
                     </div>
                 </fieldset>
             </form><!-- ends register form -->
             <!-- second for to fiter user-->
-        </div><!-- ends col-6 -->
+        <!-- </div> -->
+        <!-- ends col-6 -->
 
     </div>
 </div>

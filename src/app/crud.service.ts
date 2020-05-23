@@ -13,11 +13,8 @@ export class CrudService {
   AddEmployee(employee){
     return this.http.post(environment.EmpUrl + '/api/EmployeeMain/SaveEmployee',employee,{responseType:'text' as 'json'});
     // {responseType:'text' as 'json'}
-
     // var headerOptions = new Headers({'Content-Type': 'application/json;  charset=UTF-8',"Authorization": "Bearer " + localStorage["Authtoken2"] ,"Access-Control-Allow-Origin":environment.UIURL}); 
     // var requestOptions = new RequestOptions({method: RequestMethod.Post, headers:headerOptions,body:body});
-
-
   }
   GetEmployee(){
    return this.http.get(environment.EmpUrl + '/api/EmployeeMain/GetEmployee');

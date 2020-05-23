@@ -1,6 +1,7 @@
-import { CrudService } from './../../crud.service';
+// import { CrudService } from './../../crud.service';
 import { Component, OnInit } from '@angular/core';
 import { DesignationData } from 'src/app/employee';
+import { CrudService } from 'src/app/crud.service';
 
 @Component({
   selector: 'app-designation-view',
@@ -20,26 +21,26 @@ export class DesignationViewComponent implements OnInit {
   }
 
 
-  public AddDesignationNow(){
-    let resp=this.service.AddDesignation(this.deg1);
-     resp.subscribe((data)=>this.message=data);
-    if(this.message==1)
-    {
-    alert("Designation is Added");
-    }
-    else{
-      alert("Plese Enter Designation");
-    }
-  }
+  // public AddDesignationNow(){
+  //   let resp=this.service.AddDesignation(this.deg1);
+  //    resp.subscribe((data)=>this.message=data);
+  //   if(this.message==1)
+  //   {
+  //   alert("Designation is Added");
+  //   }
+  //   else{
+  //     alert("Plese Enter Designation");
+  //   }
+  // }
 
   
-  public UpdateDesignation(){
-    if (confirm('Are you sure to Update this Record this record ?'))
-     {    
-     let resp=this.service.UpdateDesignation(this.deg1);
-     resp.subscribe((data)=>this.message1=data);
-     } 
-  }  
+  // public UpdateDesignation(){
+  //   if (confirm('Are you sure to Update this Record this record ?'))
+  //    {    
+  //    let resp=this.service.UpdateDesignation(this.deg1);
+  //    resp.subscribe((data)=>this.message1=data);
+  //    } 
+  // }  
 
 
   public DeleteDesignationNow(id:number){

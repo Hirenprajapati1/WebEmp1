@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +13,9 @@
 <body>
   
 <div class="container">
-  <button type="button"routerLink="/AddEmployeePath" class="button">Add New Employee</button>
-  
-    <h2>Employee Data</h2>
+  <button  type="button"routerLink="/AddEmployeePath" class="block">Add New Employee</button>
+
+    <h2 style="text-align: center;">Employee Data</h2>
   <table class="table table-bordered">
     <thead>
         <tr class="div2">
@@ -46,7 +45,8 @@
             <td>{{Emp.dob}}</td>    
             <td>{{Emp.salary}}</td>              
             <td><button type="button"routerLink="/UpdateEmployeePath" class="button">Update</button></td>
-            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="DeleteEmployee(Emp.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            <td class="text-center"><button  class="btn btn-danger btn-xs" (click)="DeleteEmployee(Emp.id)"routerLink="/GetEmployeePath"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            
         </tr>
     </tbody>
   </table>

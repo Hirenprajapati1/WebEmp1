@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <form>
            <h1 style="text-align: center">Add Department </h1>
                     <div class="form-group">
@@ -23,19 +23,22 @@
             <div style="text-align: center" *ngIf="message == 1">
                 <h1>Department is Added Successfully</h1>
             </div>
-        </div>
+        </div> -->
      
         <!-- Display Data -->
-        <div class="col-md-4">
+        <!-- <div class="col-md-4"> -->
+            <div style="margin-top: 10px;">     
+                <input class="block"routerLink="/DepartmentAddPath"type="button" value="Add New Department">
+            </div>
 
+        <div>
             <h2 style="text-align: center">Department Data</h2>
             <table class="table table-bordered">
               <thead>
                   <tr class="div2">
                       <td style="text-align: center">ID</td>
                       <td style="text-align: center">DepartmentName</td>
-                      <td style="text-align: center" colspan="2">Action</td>
-                      
+                      <td style="text-align: center" colspan="2">Action</td>                   
                   </tr>
               </thead>
               <tbody>
@@ -43,7 +46,7 @@
                 <tr *ngFor="let dep of DepData" class="div1">        
                       <td style="text-align: center" class="div3">{{dep.departmentId}}</td>    
                       <td style="text-align: center">{{dep.departmentName}}</td>    
-                      <td style="text-align: center"><button type="button"routerLink="/UpdateEmployeePath" class="button">Update</button></td>
+                      <td style="text-align: center"><button type="button"routerLink="/DepartmentUpdatePath" class="button">Update</button></td>
                       <td class="text-center">
                           <button class="btn btn-danger btn-xs" (click)="DeleteDepartmentNow(dep.departmentId)">
                               <span class="glyphicon glyphicon-remove">Delete</span> 
@@ -54,7 +57,7 @@
             </table>
         </div>
 
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <form>
            <h1 style="text-align: center">Update Department </h1>
                     <div class="form-group">
@@ -80,7 +83,7 @@
             <div style="text-align: center" *ngIf="message1 == 1">
                 <h1>Department is Updated Successfully</h1>
             </div>
-        </div>
+        </div> -->
      
 
     </div>

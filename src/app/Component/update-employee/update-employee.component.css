@@ -22,3 +22,40 @@ body {
     color:maroon;
     font-size: 112%;
   }
+  .block {
+    display: block;
+    width: 95%;
+    border: none;
+    background-color: #4CAF50;
+    padding: 9px 28px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  
+  .block1 {
+    display: block;
+    width: 95%;
+    border: none;
+    background-color: #4CAF50;
+    padding: 9px 28px;
+    font-size: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .block2 {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #4CAF50;
+    padding: 5px 28px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+  }
+  

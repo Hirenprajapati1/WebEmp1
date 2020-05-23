@@ -1,0 +1,43 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row">
+      
+        <!-- <div class="col-md-4"> -->
+            <form>
+           <h1 style="text-align: center">Update Department </h1>
+                    <div class="form-group">
+      
+                        <div class="form-group">
+                            <label for="id"><span class="req">* </span> Department ID: 
+                                     </label>
+                            <input  type="number" [(ngModel)]="dep1.departmentId" name="name" id="name"
+                                class="form-control"  placeholder="Department ID"  required/>
+                        </div>
+    
+      
+                        <label for="Name"><span class="req">* </span> Department Name: </label>
+                        <input type="text" [(ngModel)]="dep1.departmentName" name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Enter Department Name"  required/>
+                             <br/>   
+        
+                            <div class="form-group">
+                                <input class="btn btn-success block"routerLink="/DepartmentViewPath" type="submit" name="submit_reg" value="Update" (click)="UpdateDepartment()">
+                            </div>     
+                            <div style="margin-top: 10px;">     
+                                <input class="block"routerLink="/DepartmentViewPath"type="button" value="Cancel">
+                             </div>
+                    
+                        
+                    </div>  
+            </form>
+            <div style="text-align: center" *ngIf="message1 == 1">
+                <h1>Department is Updated Successfully</h1>
+            </div>
+        <!-- </div> -->
+
+    </div>
+</div>

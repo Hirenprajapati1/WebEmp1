@@ -12,7 +12,7 @@
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
-    background: darkgray;
+    background: aqua;
 }
 .div3{
     padding: 15px;
@@ -39,4 +39,15 @@
     text-align: center;
     margin-top: 10px;
   }
-  
+  td{
+      text-align: center;
+  }
+
+  .my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }

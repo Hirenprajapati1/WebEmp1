@@ -1,3 +1,4 @@
+
 .block {
     display: block;
     width: 100%;
@@ -7,9 +8,6 @@
     font-size: 15px;
     cursor: pointer;
     text-align: center;
+    margin-top: 10px;
   }
-
-.BoxS
-{
-  box-shadow: cyan ;
-}
+  

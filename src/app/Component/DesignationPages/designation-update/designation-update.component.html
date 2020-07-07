@@ -1,42 +1,42 @@
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <div class="container">
     <div class="row">
      
-        <!-- <div class="col-md-4"> -->
-            <form>
+        <div class="col-md-12">
+            <form [formGroup]="form">
            <h1 style="text-align: center">Update Designation </h1>
                     <div class="form-group">
       
                         <div class="form-group">
-                            <label for="id"><span class="req">* </span> Department ID: 
-                                     </label>
-                            <input required type="number" [(ngModel)]="deg1.designationID" name="name" id="name"
-                                class="form-control"  placeholder="Designation ID"  required/>
+                            <label>Designation ID:</label> {{deg1.designationId}}
+                                                                 
+                            <input type="number" hidden [(ngModel)]="deg1.designationId" value="{{deg1.designationId}}" name="designationId" id="designationId"
+                                class="form-control"  placeholder="Designation ID"  formControlName="designationId" [ngClass]="{'is-invalid':
+                                form.get('designationId').touched && form.get('designationId').invalid}">
+                                <div class="invalid-feedback">
+                                    <div>id is required </div>
+                                </div>                        
                         </div>
     
       
-                        <label for="Name"><span class="req">* </span> Department Name: </label>
-                        <input required type="text" [(ngModel)]="deg1.designationName" name="name" id="name"
-                            class="form-control phone" maxlength="28" placeholder="Enter Designation Name"  required/>
-                             <br/>   
+                        <label> Department Name: </label>
+                        <input type="text" [(ngModel)]="deg1.designationName" name="designationName" id="designationName" value="deg1.designationName"
+                            class="form-control" placeholder="Enter Designation Name"  formControlName="designationName" [ngClass]="{'is-invalid':
+                            form.get('designationName').touched && form.get('designationName').invalid}">
+                            <div class="invalid-feedback">
+                                <div>Input is required </div>
+                            </div>                        
+                            <br/>   
         
-                            <div class="form-group">
-                                <input class="btn btn-success block"routerLink="/DesignationViewPath" type="submit" name="submit_reg" value="Update" (click)="UpdateDesignation()">
-                            </div>    
-                            <div style="margin-top: 10px;">     
-                                <input class="block"routerLink="/DesignationViewPath"type="button" value="Cancel">
+                            <div class="form-group" style="margin-right: 10px; ">
+                                <input style="margin-right: 10px " [disabled]="!form.valid" class="btn btn-success " type="submit" name="submit_reg" value="Update" (click)="UpdateDesignation()">
+                                <input style="margin-right: 10px;" class = "btn btn-danger"routerLink="/DesignationViewPath"type="button" value="Cancel">
                              </div>              
                     </div>  
             </form>
             <div style="text-align: center" *ngIf="message1 == 1">
                 <h1>Department is Updated Successfully</h1>
             </div>
-        <!-- </div> -->
+        </div>
      
     </div>
 </div>

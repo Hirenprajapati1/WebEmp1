@@ -1,30 +1,35 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<div class="container">
+<!-- <div class="container"> -->
     <div class="row">
-        <div style="margin-top: 10px;">     
+        <div class="col-md-12">
+        <!-- <div style="margin-top: 10px;">     
             <input class="block"routerLink="/DepartmentViewPath"type="button" value="List Department">
-         </div>
+        </div> -->
 
-        <form>
+        <form [formGroup]="form">
            <h1 style="text-align: center">Add Department </h1>
                     <div class="form-group">
-                        <label for="Name"><span class="req">* </span>Department Name: </label>
-                        <input  type="text" [(ngModel)]="dep1.departmentName" name="name" id="name"
-                            class="form-control phone" maxlength="28" placeholder="Enter Department Name"  required/>
+                        <label for="Name"><span class="req">* </span> Department Name: </label>
+                        <input type="text" [(ngModel)]="dep1.departmentName" name="name" id="name"
+                            class="form-control" placeholder="Enter Department Name"  formControlName="departmentName" [ngClass]="{'is-invalid':
+                            form.get('departmentName').touched && form.get('departmentName').invalid}"/>
+                            <div class="invalid-feedback">
+                                <div>Input is required </div>
+                            </div>
                         
-                             <br/>   
+                            <!-- <div *ngIf="form.get('departmentName').touched" class="invalid-feedback">
+                                <div *ngIf="form.get('departmentName').errors.required">Input is required </div>
+                            </div>                         -->
+                    <br/>   
         
                             <div class="form-group">
-                                <input class="btn btn-success block" type="submit" name="submit_reg" value="submit" (click)="AddDepartmentNow()">
+                                <input style="margin-right: 10px;" [disabled]="!form.valid" class="btn btn-success " type="submit" name="submit_reg" value="submit" (click)="AddDepartmentNow()">
+                                <input  style="margin-right: 10px;" class = "btn btn-warning"routerLink="/DepartmentViewPath"type="button" value="Goto List">
                             </div>        
                     </div>  
-            </form>
+        </form>
             <div style="text-align: center" *ngIf="message == 1">
                 <h1>Department is Added Successfully</h1>
             </div>
         </div>
- </div>
+    </div>
+ <!-- </div> -->

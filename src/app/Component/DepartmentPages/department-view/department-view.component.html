@@ -1,90 +1,59 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<div class="container">
-    <div class="row">
-        <!-- <div class="col-md-4">
-            <form>
-           <h1 style="text-align: center">Add Department </h1>
-                    <div class="form-group">
-                        <label for="Name"><span class="req">* </span>Department Name: </label>
-                        <input  type="text" [(ngModel)]="dep1.departmentName" name="name" id="name"
-                            class="form-control phone" maxlength="28" placeholder="Enter Department Name"  required/>
-                        
-                             <br/>   
-        
-                            <div class="form-group">
-                                <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="AddDepartmentNow()">
-                            </div>        
-                    </div>  
-            </form>
-            <div style="text-align: center" *ngIf="message == 1">
-                <h1>Department is Added Successfully</h1>
-            </div>
-        </div> -->
-     
+<!-- <div class="container"> -->
+    <div class="row">        
         <!-- Display Data -->
-        <!-- <div class="col-md-4"> -->
+        <div class="col-md-12" >
             <div style="margin-top: 10px;">     
-                <input class="block"routerLink="/DepartmentAddPath"type="button" value="Add New Department">
+                <input class="btn btn-light"(click)="gotoadd()"type="button" value="Add Department">
             </div>
+            <hr/>
+            <!-- <div class="card BoxS"> -->
+                <div class="card">
+              <h2 class="card-header">Department Data</h2>
+              
+             <!-- <div class="col-md-12" style="margin-top: 20px; margin-bottom: 10px; margin-top: 10px;">         
+                 <div class="col-md-4" >     
+                    <input class="btn btn-outline-success my-2 my-sm-0"routerLink="/DepartmentAddPath"type="button" value="Add Department">
+                </div> -->
+                
+                <div class="card-body"*ngIf="DepData.length > 0">
 
-        <div>
-            <h2 style="text-align: center">Department Data</h2>
-            <table class="table table-bordered">
+                <div class="form-group"style="margin-top: 20px; margin-bottom: 10px;" >
+                    <input type="text" class="form-control fa fa-search" placeholder="Search Here" [(ngModel)]="term">               
+                </div>
+                <hr/>
+            <!-- </div> -->
+
+             
+            <!-- <h2 style="text-align: center"></h2> -->
+            <!-- <table class="table table-bordered"> -->
+              <table class=" table table-striped">
               <thead>
-                  <tr class="div2">
+                  <tr *ngIf="DepData.length > 0">
                       <td style="text-align: center">ID</td>
-                      <td style="text-align: center">DepartmentName</td>
+                      <td style="text-align: center">Department Name</td>
                       <td style="text-align: center" colspan="2">Action</td>                   
                   </tr>
               </thead>
               <tbody>
           
-                <tr *ngFor="let dep of DepData" class="div1">        
+                <tr *ngFor="let dep of DepData | filter:term" class="div1">        
                       <td style="text-align: center" class="div3">{{dep.departmentId}}</td>    
                       <td style="text-align: center">{{dep.departmentName}}</td>    
-                      <td style="text-align: center"><button type="button"routerLink="/DepartmentUpdatePath" class="button">Update</button></td>
-                      <td class="text-center">
-                          <button class="btn btn-danger btn-xs" (click)="DeleteDepartmentNow(dep.departmentId)">
-                              <span class="glyphicon glyphicon-remove">Delete</span> 
-                            </button>
+                      <td style="text-align: center">
+                        <button type="button" data-toggle="modal"(click)="updateDepartment(dep.departmentId)" data-target="#edit"  class="update btn btn-warning btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button class="btn btn-danger btn-xs" (click)="DeleteDepartmentNow(dep.departmentId)"type="button" data-toggle="modal" data-target="#delete" class="delete btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
                       </td>
                   </tr>
               </tbody>
-            </table>
+            </table>  
         </div>
-
-        <!-- <div class="col-md-4">
-            <form>
-           <h1 style="text-align: center">Update Department </h1>
-                    <div class="form-group">
-      
-                        <div class="form-group">
-                            <label for="id"><span class="req">* </span> Department ID: 
-                                     </label>
-                            <input  type="number" [(ngModel)]="dep1.departmentId" name="name" id="name"
-                                class="form-control"  placeholder="Department ID"  required/>
-                        </div>
-    
-      
-                        <label for="Name"><span class="req">* </span> Department Name: </label>
-                        <input type="text" [(ngModel)]="dep1.departmentName" name="name" id="name"
-                            class="form-control phone" maxlength="28" placeholder="Enter Department Name"  required/>
-                             <br/>   
-        
-                            <div class="form-group">
-                                <input class="btn btn-success" type="submit" name="submit_reg" value="Update" (click)="UpdateDepartment()">
-                            </div>        
-                    </div>  
-            </form>
-            <div style="text-align: center" *ngIf="message1 == 1">
-                <h1>Department is Updated Successfully</h1>
-            </div>
-        </div> -->
-     
+                </div>
+    <!-- </div>  -->
+    </div>
 
     </div>
-</div>
+<!-- </div> -->

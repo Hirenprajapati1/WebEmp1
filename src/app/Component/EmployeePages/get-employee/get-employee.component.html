@@ -1,0 +1,62 @@
+<!-- <div class="container"> -->
+  <button  type="button" routerLink="/AddEmployeePath" class="btn btn-light">Add Employee</button>
+  <hr/>
+  
+  <div class="card">
+    <h2 class="card-header">Employee Data</h2>
+    <div class="card-body ">
+   
+      <div class="form-group"  style="margin-top: 20px; margin-bottom: 10px;">
+          <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+          <hr/>
+      </div>
+
+  <!-- <table class="table table-bordered"> -->
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class=" table table-striped">
+    <thead>
+        <tr>
+            <td style="text-align: left;">ID</td>
+            <td style="text-align: left;">Name</td>
+            <td>Email</td>
+            <td>Employee Code</td>
+            <td>Gender</td>
+            <td>Designation</td>
+            <td>Department</td>
+            <td>Data Of Birth</td>
+            <td>Salary</td>
+            <td colspan="2">Action</td>
+
+        </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let Emp of EmployeeData | filter:term">        
+            <td style="text-align: left;">{{Emp.id}}</td>    
+            <td style="text-align: left;">{{Emp.name}}</td>    
+            <td >{{Emp.email}}</td>    
+            <td style="text-align: right;">{{Emp.employeeCode}}</td>   
+            <td>{{Emp.gender}}</td>     
+            <!-- <td>{{Emp.department}}</td>
+            <td>{{Emp.designation}}</td>
+
+            <td>{{Emp.departmentId}}</td>
+            <td>{{Emp.designationId}}</td> -->
+            
+            <td>{{Emp.designationName}}</td>    
+            <td>{{Emp.departmentName}}</td>    
+            <td>{{Emp.dob  | date :"dd-MMM, y"}}</td>    
+            <td style="text-align: end;">{{Emp.salary}}</td> 
+            <!-- routerLink="/UpdateEmployeePath" -->
+            <td><button type="button"(click)="updateEmployee(Emp.id)" data-toggle="modal" data-target="#edit" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span> </button>
+            <button (click)="DeleteEmployee(Emp.id)"routerLink="/GetEmployeePath"type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>            
+        </tr>
+    </tbody>
+  </table>
+    </div>
+  <router-outlet></router-outlet>
+    </div>
+  </div>
+<!-- </div> -->
+
+

@@ -1,43 +1,43 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<div class="container">
+<!-- <div class="container"> -->
     <div class="row">
       
-        <!-- <div class="col-md-4"> -->
-            <form>
+        <div class="col-md-12">
+            <form [formGroup]="form">
            <h1 style="text-align: center">Update Department </h1>
                     <div class="form-group">
       
                         <div class="form-group">
-                            <label for="id"><span class="req">* </span> Department ID: 
-                                     </label>
-                            <input  type="number" [(ngModel)]="dep1.departmentId" name="name" id="name"
-                                class="form-control"  placeholder="Department ID"  required/>
+                            <label> Department ID: </label>{{dep1.departmentId}}
+                            <input  type="number" hidden [(ngModel)]="dep1.departmentId" name="departmentId" id="departmentId"
+                                class="form-control"  placeholder="Department ID"  formControlName="departmentId" [ngClass]="{'is-invalid':
+                                form.get('departmentId').touched && form.get('departmentId').invalid}"/>
+                                <div *ngIf="form.get('departmentId').touched" class="invalid-feedback">
+                                    <div *ngIf="form.get('departmentId').errors.required">Input is required </div>
+                                </div>                        
                         </div>
-    
-      
+          
                         <label for="Name"><span class="req">* </span> Department Name: </label>
-                        <input type="text" [(ngModel)]="dep1.departmentName" name="name" id="name"
-                            class="form-control phone" maxlength="28" placeholder="Enter Department Name"  required/>
+                        <input type="text" [(ngModel)]="dep1.departmentName" name="departmentName" id="departmentName"
+                            class="form-control" placeholder="Enter Department Name"  formControlName="departmentName" [ngClass]="{'is-invalid':
+                            form.get('departmentName').touched && form.get('departmentName').invalid}"/>
+                            <div class="invalid-feedback">
+                                <div>Input is required </div>
+                            </div>
+              
+                            <!-- <div *ngIf="form.get('departmentName').touched" class="invalid-feedback">
+                                <div *ngIf="form.get('departmentName').errors.required">Input is required </div>
+                            </div>                         -->
                              <br/>   
         
                             <div class="form-group">
-                                <input class="btn btn-success block"routerLink="/DepartmentViewPath" type="submit" name="submit_reg" value="Update" (click)="UpdateDepartment()">
-                            </div>     
-                            <div style="margin-top: 10px;">     
-                                <input class="block"routerLink="/DepartmentViewPath"type="button" value="Cancel">
+                                <input style="margin-right: 10px;" [disabled]="!form.valid"class="btn btn-success" type="submit" name="submit_reg" value="Update" (click)="UpdateDepartment()">
+                                <input style="margin-right: 10px;" routerLink="/DepartmentViewPath" class = "btn btn-danger"type="button" value="Cancel">
                              </div>
-                    
-                        
                     </div>  
             </form>
             <div style="text-align: center" *ngIf="message1 == 1">
                 <h1>Department is Updated Successfully</h1>
             </div>
-        <!-- </div> -->
-
+        </div>
     </div>
-</div>
+<!-- </div> -->

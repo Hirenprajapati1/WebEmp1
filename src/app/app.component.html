@@ -1,26 +1,67 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<ngx-loading-bar [height]="'4px'"[color]="'#28a745'"[value]="'100'"> </ngx-loading-bar>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark ">
+    <!-- Links -->
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+        <input type="radio"routerLink="/HomepagePath"  name="options" id="option1" autocomplete="off" checked> Home
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio"routerLink="/GetEmployeePath" name="options" id="option2" autocomplete="off"> Employee
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio"routerLink="/DepartmentViewPath" name="options" id="option3" autocomplete="off"> Department
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio"routerLink="/DesignationViewPath" name="options" id="option3" autocomplete="off"> Designation
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio"routerLink="/FileUploadPath" name="options" id="option3" autocomplete="off"> Upload File
+      </label>
+      
+
+      <label style="text-align: right; float:right; margin-right: 0px;">
+      <button style="text-align: right;" class="btn btn-danger  float:right; margin-right: 0px;" (click)="onLogout()">Logout</button>
+      </label>  
+      
+    </div>
+
+
+    
+    <!-- <ul class="navbar-nav">      
+      <li class="nav-item active">
+            <input class=" btn btn-primary btn-small navbar-btn"routerLink="/HomepagePath"type="button" value="Home">
+      </li>
+      <li class="nav-item">
+            <input class="btn btn-primary btn-small navbar-btn"routerLink="/GetEmployeePath"type="button" value="Employee">
+      </li>
+      <li class="nav-item">
+            <input class="btn btn-primary btn-small navbar-btn"routerLink="/DepartmentViewPath"type="button" value="Department">
+      </li>
+      <li class="nav-item">
+            <input class="btn btn-primary btn-small navbar-btn"routerLink="/DesignationViewPath"type="button" value="Designation">
+      </li>
+    </ul> -->
+  </nav>
+  <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+  </label>
+</div> -->
 
 <div class="container">
+      <hr/>  
+      <router-outlet></router-outlet>
     
-    <div class="row" style="background-color: blueviolet;">
-        <div class="col-md-4">
-            <input class="block"routerLink="/GetEmployeePath"type="button" value="Manage Employee">
-        </div>
-
-        <div class="col-md-4">
-            <input class="block"routerLink="/DepartmentViewPath"type="button" value="Manage Department">
-        </div>
-
-        <div class="col-md-4">
-            <input class="block"routerLink="/DesignationViewPath"type="button" value="Manage Designation">
-        </div>
-
-    </div>
 </div>
-
-<router-outlet></router-outlet>
+    
+<!-- 
+<router-outlet></router-outlet> -->
 
 <!-- <app-add-employee></app-add-employee> -->
 <!-- <app-get-employee></app-get-employee> -->

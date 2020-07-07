@@ -1,90 +1,48 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<div class="container">
+<!-- <div class="container"> -->
     <div class="row">
-        <!-- <div class="col-md-4">
-            <form>
-           <h1 style="text-align: center">Add Designation</h1>
-                    <div class="form-group">
-                        <label for="Name"><span class="req">* </span>Designation Name: </label>
-                        <input required type="text" [(ngModel)]="deg1.designationName" name="name" id="name"
-                            class="form-control phone" maxlength="28" placeholder="Enter Designation Name"  required/>
-                        
-                             <br/>   
-        
-                            <div class="form-group">
-                                <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="AddDesignationNow()">
-                            </div>        
-                    </div>  
-            </form>
-            <div style="text-align: center" *ngIf="message == 1">
-                <h1>Designation is Added Successfully</h1>
-            </div>
-        </div>
-      -->
         <!-- Display Data -->
-        <!-- <div class="col-md-4"> -->
+        <div class="col-md-12">
             <div style="margin-top: 10px;">     
-                <input class="block"routerLink="/DesignationAddPath"type="button" value="Add New Designation">
+                <input class="btn btn-light"routerLink="/DesignationAddPath"type="button" value="Add Designation">
             </div>
-
-            <h2 style="text-align: center">Designation Data</h2>
-            <table class="table table-bordered">
-              <thead>
-                  <tr class="div2">
-                      <td style="text-align: center">ID</td>
-                      <td style="text-align: center">DesignationName</td>
-                      <td style="text-align: center" colspan="2">Action</td>
-                      
-                  </tr>
-              </thead>
-              <tbody>
-          
-                <tr *ngFor="let deg of DegData" class="div1">        
-                      <td style="text-align: center" class="div3">{{deg.designationId}}</td>    
-                      <td style="text-align: center">{{deg.designationName}}</td>    
-                      <td style="text-align: center"><button type="button"routerLink="/DesignationUpdatePath" class="button">Update</button></td>
-                      <td class="text-center">
-                          <button class="btn btn-danger btn-xs" (click)="DeleteDesignationNow(deg.designationId)">
-                              <span class="glyphicon glyphicon-remove">Delete</span> 
-                            </button>
-                      </td>
-                  </tr>
-              </tbody>
-            </table>
-        <!-- </div> -->
-
-        <!-- <div class="col-md-4">
-            <form>
-           <h1 style="text-align: center">Update Designation </h1>
-                    <div class="form-group">
-      
-                        <div class="form-group">
-                            <label for="id"><span class="req">* </span> Department ID: 
-                                     </label>
-                            <input required type="number" [(ngModel)]="deg1.designationID" name="name" id="name"
-                                class="form-control"  placeholder="Designation ID"  required/>
+       <hr/>
+            <div class="card">
+                <h2 class="card-header">Designation Data</h2>
+                    <div class="card-body">
+                        <div class="form-group"  style="margin-top: 20px; margin-bottom: 10px;">
+                            <input type="text" class="form-control " placeholder="Search Here" [(ngModel)]="term">
+                            <hr/>
                         </div>
-    
-      
-                        <label for="Name"><span class="req">* </span> Department Name: </label>
-                        <input required type="text" [(ngModel)]="deg1.designationName" name="name" id="name"
-                            class="form-control phone" maxlength="28" placeholder="Enter Designation Name"  required/>
-                             <br/>   
-        
-                            <div class="form-group">
-                                <input class="btn btn-success" type="submit" name="submit_reg" value="Update" (click)="UpdateDesignation()">
-                            </div>        
-                    </div>  
-            </form>
-            <div style="text-align: center" *ngIf="message1 == 1">
-                <h1>Department is Updated Successfully</h1>
+                        
+                            <table class=" table table-striped">
+                            <!-- <table class="table table-bordered table table-striped">       -->
+                                <thead>
+                                <tr class="panel panel-info">
+                                    <td style="text-align: center">ID</td>
+                                    <td style="text-align: center">Designation Name</td>
+                                    <td style="text-align: center" colspan="2">Action</td>            
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <tr class="panel panel-success" *ngFor="let deg of DegData| filter:term ">        
+                                    <td style="text-align: center" class="div3">{{deg.designationId}}</td>    
+                                    <td style="text-align: center">{{deg.designationName}}</td>    
+                                    <td style="text-align: center">
+                                        <button (click)="updateDesignation(deg.designationId)" type="button" data-toggle="modal" data-target="#edit" data-uid="1" class="update btn btn-warning btn-sm">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </button>
+                                        <!-- routerLink="/DesignationUpdatePath" -->
+                                        <button (click)="DeleteDesignationNow(deg.designationId)"type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm">
+                                            <span class="glyphicon glyphicon-trash"></span> 
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                    </div>
             </div>
         </div>
-      -->
-
     </div>
-</div>
+<!-- </div> -->
